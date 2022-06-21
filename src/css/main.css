@@ -1,6 +1,7 @@
 main > .max-width {
 	display: flex;
-	flex-direction: row-reverse;
+	/* flex-direction: row-reverse; */
+	/* 왜 굳이 row-reverse 하고 순서를 거꾸로 배치하는지 궁금합니다 */
 	gap: 2.4rem;
 	position: relative;
 }

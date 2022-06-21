@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderIcon from './HeaderIcon'
 import HeaderLoginSection from './HeaderLoginSection'
-import '../../css/header.css'
+import '../../../css/header.css'
 const Header = () => {
   return (
     <header>
