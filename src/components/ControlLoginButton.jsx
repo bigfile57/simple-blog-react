@@ -8,7 +8,7 @@ const ControlLoginButton = () => {
         <img src={iconLogout} alt="로그아웃 버튼" />
         <span>Logout</span>
       </button>
-  </li>
+    </li>
   )
 }
 
