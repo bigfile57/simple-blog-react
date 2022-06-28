@@ -1,5 +1,5 @@
 import React from 'react'
-import profile from '../images/profile.jpg'
+import profile from '../assets/profile.jpg'
 const Profile = ({className}) => {
   return (
       <a href='./'>
