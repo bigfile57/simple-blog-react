@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React Blog</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>React Blog</title>
-</head>
+  <body>
+    <div id="root"></div>
+    <button onclick="getBlogDatas()">test</button>
 
-<body>
-  <div id="root"></div>
-</body>
+    <script>
+      const getBlogDatas = async () => {
+        console.log("getPosts");
+        const url = "./data.json";
+        // /public 은 기본경로로 설정돼있음
+        const result = await axios.get(url);
+        console.log(result);
+        const blogData = await [result.data.blog].map((data) => ({
+          mainTitle: `${data.mainTitle}`,
+          subTitle: `${data.subTitle}`,
+          description: `${data.description}`,
+        }));
 
+        const postData = await result.data.posts.map((data) => ({
+          id: `${data.id}`,
+          mainBg: `${data.mainBg}`,
+          category: `${data.category}`,
+          title: `${data.title}`,
+          thumbnail: `${data.thumbnail}`,
+          profileImg: `${data.profileImg}`,
+          userName: `${data.userName}`,
+          created: `${data.created}`,
+          contents: data.contents,
+        }));
+
+        const userData = await result.data.users.map((data) =>
+          // console.log(data.category),
+          ({
+            id: `${data.id}`,
+            category: data.category,
+            profileImg: `${data.profileImg}`,
+            name: `${data.name}`,
+            email: `${data.email}`,
+            sns: `${data.sns}`,
+            userInfo: `${data.userInfo}`,
+          })
+        );
+        // console.log(blogData);
+        console.log(postData);
+        console.log(blogData);
+        console.log(userData);
+        // console.log(userData[0].category.split(','));
+
+      };
+    </script>
+  </body>
 </html>

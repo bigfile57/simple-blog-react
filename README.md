@@ -20,3 +20,24 @@
 #### 깨달은 것
     1. json 데이터를 받아와 useState 로 저장할 때 객체를 저장하는 법
        (...와 concat 을 쓰는 이유)
+
+
+### 0630 한일
+    - data 안에서 배열이 들어간 부분(카테고리 등) 은 각 컴포넌트에서 받아서 데이터대로 뿌려줌
+    - getdata.js 에서 각 블로그정보, 유저정보, 포스팅정보를 axios 로 data.json 으로부터 받아서 반환해준다. 반환한 값은 각 컴포넌트에서 가져다 쓰도록 Post에서 모듈화 시킴
+
+
+
+### 0704 한일
+    - userData 부분 userId 에 맞춰서 출력할 수 있도록 필터처리
+    - postData 부분 postview 에 넘길 데이터를 뽑기 위해 필터처리해서 
+    contents 부분만 빼서 저장
+    - Categories 컴포넌트 받아온 데이터에 맞춰서 출력되도록 수정
+
+#### 0704 문제점 및 해결
+    - filter() 함수 undefined 오류 
+      filter 쓸 때 값이 비어있으면 undefined 오류가 뜨는 데 삼항 연산자로 조건부 렌더 처리해줘서 데이터를 받아서 
+      userInfodata 값이 undefined가 아니면 시작 하도록 수정했다
+      
+    - postData 중에서 contents 를 저장했는데 더미 데이터의 contents 부분이 좀 잘못된 것 같다. 
+      제목(p태그), 배경(img태그), 내용(p태그), 배경(img태그) 식으로 들어가 있어야 할 것 같다.
