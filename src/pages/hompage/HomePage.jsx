@@ -1,19 +1,20 @@
-import React from 'react'
-import Header from './header/Header'
-import '../../css/button.css'
-import '../../css/banner.css'
-import '../../css/main.css'
+import React from "react";
+import Header from "./header/Header";
+import "../../css/button.css";
+import "../../css/banner.css";
+import "../../css/main.css";
 
-import Banner from './banner/Banner'
-import Main from './main/Main'
+import Banner from "./banner/Banner";
+import Main from "./main/Main";
+
 function HomePage() {
   return (
     <>
-        <Header />
-        <Banner />
-        <Main />
+      <Header />
+      <Banner />
+      <Main />
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

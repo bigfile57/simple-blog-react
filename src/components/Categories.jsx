@@ -5,7 +5,7 @@ const CategoryList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.8rem;
   dd {
     margin-right: 0.4rem;
@@ -16,19 +16,22 @@ const CategoryList = styled.ul`
   }
 `;
 
-function Categories({ types }) {
+function Categories({types}) {
   const [categories, setCategories] = useState([]);
 
+  
   useEffect(() => {
+    // console.log(...types);
     function addCategory(types) {
-      setCategories(types, ...categories);
+      console.log(types);
+      setCategories(types);
     }
     addCategory(types);
   }, [categories, types]);
 
   return (
     <CategoryList>
-      {categories.map((item, idx) => (
+      {categories && categories.map((item, idx) => (
         <React.Fragment key={idx}>
           <dd>
             <li>

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Header from "../hompage/header/Header";
+import PostViewBanner from "./PostViewBanner";
+import PostViewContent from "./PostViewContent";
 
 function PostView() {
   return (
-    <div>PostView</div>
-  )
+    <>
+      <Header />
+      <PostViewBanner />
+      <PostViewContent />
+    </>
+  );
 }
 
-export default PostView
+export default PostView;
